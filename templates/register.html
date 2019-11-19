@@ -1,0 +1,27 @@
+{% extends 'basic.html' %}
+{% block head %}
+{{super()}}
+<title>Register</title>
+<link href="{{ url_for('static', filename = 'css/others.css') }}" rel='stylesheet' type='text/css' />
+{% endblock %}
+
+{% block content %}
+<body>
+	<div class="main">
+		<div class="login-form">
+			<h1>注&nbsp&nbsp&nbsp&nbsp册</h1>
+				<div class="head">
+					<img src="{{ url_for('static', filename = 'images/user.png') }}" alt=""/>
+				</div>
+				<form method="POST">
+					<input type="text" class="text" placeholder="Nickname" name = "Nickname" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Nickname';}" autocomplete="off" required>    
+					<input type="text" class="text" placeholder="Your Email" name = "Username" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Username';}" autocomplete="off" required>
+					<input type="password" placeholder="Password" name = "Password" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Password';}" autocomplete="off" required>
+					<input type="Password" placeholder="Password" name = "Confirm_Password" onfocus="this.placeholder = '';" onblur="if (this.placeholder == '') {this.placeholder = 'Password';}" autocomplete="off" required>
+					<input class="btn" type="submit" name="submit" value="注册">
+					<p><a href="{{ url_for('login') }}">已有帐号？直接登录</a></p>
+				</form>
+		</div>
+	</div>
+</body>
+{% endblock %}
